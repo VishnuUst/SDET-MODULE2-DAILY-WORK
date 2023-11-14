@@ -30,9 +30,9 @@ namespace SelfExamples
 
         public void TitleTest()
         {
-            Thread.Sleep(2000); // To wait (10 seconds), only for viewing purpose .Should not include in the final code.
-            Console.WriteLine("title " + driver.Title);
-            Console.WriteLine("Title length " + driver.Title.Length);
+            Thread.Sleep(3000); // To wait (10 seconds), only for viewing purpose .Should not include in the final code.
+            //Console.WriteLine("title " + driver.Title);
+           // Console.WriteLine("Title length " + driver.Title.Length);
             Assert.AreEqual("Google", driver.Title);
             Console.WriteLine("Title test - Pass");
         }
@@ -50,11 +50,52 @@ namespace SelfExamples
         {
             IWebElement searchInputBox = driver.FindElement(By.Id("APjFqb"));
             searchInputBox.SendKeys("hp laptops"); //to type inside the text box
-            Thread.Sleep(2000);
-            IWebElement googleSearchButton = driver.FindElement(By.Name("btnK"));
+            Thread.Sleep(3000);
+            IWebElement googleSearchButton = driver.FindElement(By.ClassName("gNO89b"));
             googleSearchButton.Click();
             Assert.AreEqual("hp laptops - Google Search", driver.Title);
             Console.WriteLine("GoogleSearchTest - Pass");
+        }
+        public void GmailLinkTest()
+        {
+            driver.Navigate().Back();
+            driver.FindElement(By.LinkText("Gmail")).Click();
+           // driver.FindElement(By.PartialLinkText("ma")).Click();
+
+            Thread.Sleep(3000);
+            Assert.That(driver.Url.Contains("gmail"));
+            Console.WriteLine("Gmail Link - Pass");
+        }
+        public void ImagesLinkTest()
+        {
+            driver.Navigate().Back();
+            // driver.FindElement(By.LinkText("Gmail")).Click();
+            driver.FindElement(By.PartialLinkText("mag")).Click();
+
+            Thread.Sleep(3000);
+            Assert.That(driver.Title.Contains("Images"));
+            Console.WriteLine("Image Link - Pass");
+        }
+
+        public void LocalizationTest()
+        {
+            driver.Navigate().Back();
+            // driver.FindElement(By.LinkText("Gmail")).Click();
+           string loc = driver.FindElement(By.XPath("/html/body/div[1]/div[6]/div[1]")).Text;
+
+            Thread.Sleep(3000);
+            Assert.That(loc.Equals("India"));
+            Console.WriteLine("Loc - Pass");
+        }
+        public void GoogleAppYoutubeTest()
+        {
+            driver.FindElement(By.ClassName("gb_d")).Click();
+            Thread.Sleep(5000);
+           
+            driver.FindElement(By.CssSelector("a[href*='youtube']")).Click();////*[@id="yDmH0d"]/c-wiz/div/div/c-wiz/div/div/div[2]/div[2]/div[1]/ul/li[4]/a/div/span
+            Thread.Sleep(5000);
+            Assert.That("Youtube".Equals(driver.Title));
+            
         }
 
         public void Destruct()
