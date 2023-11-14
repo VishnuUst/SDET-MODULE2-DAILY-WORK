@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumNunitExamples", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment-1-14-11-2023", "Assignment-1-14-11-2023\Assignment-1-14-11-2023.csproj", "{1C42DC82-340C-4D36-9D67-92B41B0BF84E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment-2-14-11-2023", "Assignment-2-14-11-2023\Assignment-2-14-11-2023.csproj", "{D91293FD-3BC4-49CA-B988-7DAA37645CDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1C42DC82-340C-4D36-9D67-92B41B0BF84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C42DC82-340C-4D36-9D67-92B41B0BF84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C42DC82-340C-4D36-9D67-92B41B0BF84E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91293FD-3BC4-49CA-B988-7DAA37645CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91293FD-3BC4-49CA-B988-7DAA37645CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91293FD-3BC4-49CA-B988-7DAA37645CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91293FD-3BC4-49CA-B988-7DAA37645CDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
