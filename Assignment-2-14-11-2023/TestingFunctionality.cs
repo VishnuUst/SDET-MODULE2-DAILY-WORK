@@ -29,6 +29,7 @@ namespace Assignment_2_14_11_2023
         }
         public void GoogleSearchTest()
         {
+            Thread.Sleep(1000);
             driver.Navigate().GoToUrl("https://www.yahoo.com/");
         }
         public void BackToGoogle()
