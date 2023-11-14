@@ -1,23 +1,29 @@
-﻿using NUnit.Framework;
+﻿
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.DevTools.V117.WebAuthn;
+using SelfExamples;
 
-IWebDriver driver = new ChromeDriver();
-
-driver.Url = "https://www.google.com";
-Thread.Sleep(2000);
-string title = driver.Title;
+GHTests gHTests = new GHTests();
+Console.WriteLine("1.Edge 2.Chrome");
+int ch = Convert.ToInt32(Console.ReadLine());
+switch (ch)
+{
+    case 1:
+        gHTests.InitializeEdgeDriver(); break;
+    case 2:
+        gHTests.InitializeChromeDriver(); break;
+}
 try
 {
-    Assert.AreEqual("Google", title);
-    Console.WriteLine("Passed");
+    gHTests.TitleTest();
+    gHTests.PageSourceandURLTest();
+    gHTests.GoogleSearchTest();
+
 }
-catch(AssertionExceptions)
+catch (AssertionException)
 {
-    Console.WriteLine("Failed");
+    Console.WriteLine("Fail");
 }
-driver.Close();
 
-
-
+gHTests.Destruct();
