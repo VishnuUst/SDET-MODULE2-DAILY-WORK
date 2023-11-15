@@ -90,10 +90,11 @@ namespace SelfExamples
         public void GoogleAppYoutubeTest()
         {
             driver.FindElement(By.ClassName("gb_d")).Click();
-            Thread.Sleep(5000);
-           
-            driver.FindElement(By.CssSelector("a[href*='youtube']")).Click();////*[@id="yDmH0d"]/c-wiz/div/div/c-wiz/div/div/div[2]/div[2]/div[1]/ul/li[4]/a/div/span
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
+
+            IWebElement youtubers = driver.FindElement(By.CssSelector("#yDmH0d > c-wiz > div > div > c-wiz > div > div > div.v7bWUd > div.o83JEf > div:nth-child(1) > ul > li:nth-child(3) > a > span"));
+            youtubers.Click();
+            Thread.Sleep(7000);
             Assert.That("Youtube".Equals(driver.Title));
             
         }

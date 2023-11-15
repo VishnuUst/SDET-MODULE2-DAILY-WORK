@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium-examples", "Seleni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumNunitExamples", "SeleniumNunitExamples\SeleniumNunitExamples.csproj", "{3C17258C-7A83-405B-A781-EBDB4ACAC102}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment-1-14-11-2023", "Assignment-1-14-11-2023\Assignment-1-14-11-2023.csproj", "{1C42DC82-340C-4D36-9D67-92B41B0BF84E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment-1-14-11-2023", "Assignment-1-14-11-2023\Assignment-1-14-11-2023.csproj", "{1C42DC82-340C-4D36-9D67-92B41B0BF84E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment-2-14-11-2023", "Assignment-2-14-11-2023\Assignment-2-14-11-2023.csproj", "{D91293FD-3BC4-49CA-B988-7DAA37645CDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment-2-14-11-2023", "Assignment-2-14-11-2023\Assignment-2-14-11-2023.csproj", "{D91293FD-3BC4-49CA-B988-7DAA37645CDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazone-Tests", "Amazone-Tests\Amazone-Tests.csproj", "{E0FEFED2-E657-451F-9087-CCD81B5295E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D91293FD-3BC4-49CA-B988-7DAA37645CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D91293FD-3BC4-49CA-B988-7DAA37645CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D91293FD-3BC4-49CA-B988-7DAA37645CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0FEFED2-E657-451F-9087-CCD81B5295E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0FEFED2-E657-451F-9087-CCD81B5295E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0FEFED2-E657-451F-9087-CCD81B5295E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0FEFED2-E657-451F-9087-CCD81B5295E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
