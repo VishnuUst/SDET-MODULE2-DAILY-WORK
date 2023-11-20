@@ -98,7 +98,7 @@ namespace SeleniumNunitExamples
             passwordInput.SendKeys(password);
             ClearForm(emailInput);
             ClearForm(passwordInput);
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
         }
         static object[] InvalidLoginData()
         {
@@ -109,5 +109,5 @@ namespace SeleniumNunitExamples
             };
         }
 
-    }
+    }//arguments[0].scrollintoview(true);
 }
