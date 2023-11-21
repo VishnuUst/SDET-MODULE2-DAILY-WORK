@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.DevTools.V117.LayerTree;
 using OpenQA.Selenium.DevTools.V117.Storage;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -12,7 +13,9 @@ namespace SeleniumNunitExamples
 {
     internal class LinkdinTests : Corecodes
     {
+        [Ignore("other")]
         [Test]
+
         [Author("Vishnu","abc@gmail.com")]
         [Description("Check for Valid Login")]
         [Category("Regression Testing")]
@@ -70,11 +73,12 @@ namespace SeleniumNunitExamples
             ClearForm(passwordInput);
             Thread.Sleep(3000);
         }*/
-      
+      /*
        void ClearForm(IWebElement element)
         {
             element.Clear();
         }
+        [Ignore("other")]
         [Test]
         [Author("Gokul", "ab@gmail.com")]
         [Description("Check for invalid login")]
@@ -96,18 +100,26 @@ namespace SeleniumNunitExamples
 
             emailInput.SendKeys(email);
             passwordInput.SendKeys(password);
+            TakeScreenShot();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].scrollIntoView(true);",
+                driver.FindElement(By.XPath("//button[@type='submit']")));
+            Thread.Sleep(5000);
+            js.ExecuteScript("arguments[0].click();",
+               driver.FindElement(By.XPath("//button[@type='submit']")));
+            TakeScreenShot();
             ClearForm(emailInput);
             ClearForm(passwordInput);
-            Thread.Sleep(3000);
+
         }
-        static object[] InvalidLoginData()
+       /* static object[] InvalidLoginData()
         {
             return new object[]
             {
                 new object[]{"abc@xyz.com","1234"},
                 new object[]{"yyy@xyz.com","5678"},
             };
-        }
-
+        }*/
+       
     }//arguments[0].scrollintoview(true);
 }

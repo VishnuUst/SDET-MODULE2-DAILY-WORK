@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment-2-14-11-2023", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazone-Tests", "Amazone-Tests\Amazone-Tests.csproj", "{E0FEFED2-E657-451F-9087-CCD81B5295E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment3-FlipKart-20-11-2023", "Assignment3-FlipKart-20-11-2023\Assignment3-FlipKart-20-11-2023.csproj", "{9D9462C0-3B91-4977-8B34-964266016A23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment3-FlipKart-20-11-2023", "Assignment3-FlipKart-20-11-2023\Assignment3-FlipKart-20-11-2023.csproj", "{9D9462C0-3B91-4977-8B34-964266016A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment-4-Naptol-21-11-2023", "Assignment-4-Naptol-21-11-2023\Assignment-4-Naptol-21-11-2023.csproj", "{DFC7180F-8563-4678-8A86-0E96BB9181F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{9D9462C0-3B91-4977-8B34-964266016A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D9462C0-3B91-4977-8B34-964266016A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D9462C0-3B91-4977-8B34-964266016A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC7180F-8563-4678-8A86-0E96BB9181F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC7180F-8563-4678-8A86-0E96BB9181F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC7180F-8563-4678-8A86-0E96BB9181F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC7180F-8563-4678-8A86-0E96BB9181F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumNunitExamples
+namespace Assignment_4_Naptol_21_11_2023
 {
-    internal class Corecodes
+    internal class CoreCodeNaptol
     {
-        Dictionary<string, string> ? properties;
+        Dictionary<string, string>? properties;
         public IWebDriver? driver;
         public void ReadConfiguration()
         {
             string currDir = Directory.GetParent(@"../../../").FullName;
-            properties = new Dictionary<string,string>();
-            string fileName = currDir + "/configursetting/config.properties";
+            properties = new Dictionary<string, string>();
+            string fileName = currDir + "/config/config_properties.txt";
             string[] lines = File.ReadAllLines(fileName);
             foreach (string line in lines)
             {
@@ -30,39 +30,11 @@ namespace SeleniumNunitExamples
                 }
             }
         }
-        public bool CheckLinkSatus(string url)
-        {
-            try
-            {
-                var request = (System.Net.HttpWebRequest)
-                    System.Net.WebRequest.Create(url);
-                request.Method = "HEAD";
-                using (var response = request.GetResponse())
-                {
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-
-            }
-           
-        }
-        public void TakeScreenShot()
-        {
-            ITakesScreenshot screenshot = (ITakesScreenshot)driver;
-            Screenshot screenshot1 = screenshot.GetScreenshot();
-            string currDir = Directory.GetParent(@"../../../").FullName;
-            string filepath = currDir + "/Screenshot/scs_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-            screenshot1.SaveAsFile(filepath);
-
-        }
-        [OneTimeSetUp] 
-        public void Intializevrowser() 
+        [OneTimeSetUp]
+        public void Intializevrowser()
         {
             ReadConfiguration();
-            if (properties["browser"] .ToLower() == "chrome")
+            if (properties["browser"].ToLower() == "chrome")
             {
                 driver = new ChromeDriver();
             }
@@ -80,6 +52,5 @@ namespace SeleniumNunitExamples
         {
             driver.Quit();
         }
-
     }
 }
