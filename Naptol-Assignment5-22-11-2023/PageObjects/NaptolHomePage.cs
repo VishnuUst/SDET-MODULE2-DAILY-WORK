@@ -21,7 +21,12 @@ namespace NaptolAssignment522112023.PageObjects
         public void SearchTextFunction(string productname)
         {
             SearchText.SendKeys(productname);
+            
+        }
+        public SelectProductPage EnterFunction()
+        {
             SearchText.SendKeys(Keys.Enter);
+            return new SelectProductPage(driver);
         }
 
 

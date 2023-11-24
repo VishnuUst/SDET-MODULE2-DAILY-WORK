@@ -20,21 +20,22 @@ namespace NaptolAssignment522112023.TestScripts
                 driver.Navigate().GoToUrl("https://www.naaptol.com/");
             }
             naptolhomepage.SearchTextFunction("eyewear");
-           // Assert.That(driver.Url.Contains(""))
-            var selectproductpage = new SelectProductPage(driver);
-            selectproductpage.SelectProduct();
+            var enterkey = naptolhomepage.EnterFunction();
+            // Assert.That(driver.Url.Contains(""))
+
+            var selectPage = enterkey.SelectProduct();
 
             List<string> lswindow = driver.WindowHandles.ToList();
             driver.SwitchTo().Window(lswindow[1]);
 
             Thread.Sleep(2000);
-            var buyNow = new SelectedProductPage(driver);
-            buyNow.Sizeselect();
+            selectPage.Sizeselect();
+            
             Thread.Sleep(2000);
 
-            buyNow.BuyNowButtonClicked();
+            selectPage.BuyNowButtonClicked();
             Thread.Sleep(2000);
-            buyNow.CloseButtonClicked();
+            selectPage.CloseButtonClicked();
             Thread.Sleep(2000);
 
 
