@@ -19,17 +19,28 @@ namespace SeleniumNunitExamples
             string title = driver.Title;
             Assert.AreEqual("Google", title);
         }
-        [Ignore("Other")]
+        //[Ignore("Other")]
         [Test]
         public void GsTest()
         {
-            IWebElement searchInputBox = driver.FindElement(By.Id("APjFqb"));
-            searchInputBox.SendKeys("hp laptops"); //to type inside the text box
-            Thread.Sleep(3000);
-            IWebElement googleSearchButton = driver.FindElement(By.ClassName("gNO89b"));
-            googleSearchButton.Click();
-            Assert.AreEqual("hp laptops - Google Search", driver.Title);
-            Console.WriteLine("GoogleSearchTest - Pass");
+            string currDir = Directory.GetParent(@"../../../").FullName;
+            string? excelFilePath = currDir + "\\InputData.xlsx";
+            Console.WriteLine(excelFilePath);
+            List<ExcelData> data = ExcelUtils.ReadExcelData(excelFilePath);
+            foreach (var dataItem in data) 
+            {
+                Console.WriteLine($"Text: {dataItem.SearchText}");
+                IWebElement searchInputBox = driver.FindElement(By.Id("APjFqb"));
+                searchInputBox.SendKeys(dataItem.SearchText); //to type inside the text box
+                Thread.Sleep(3000);
+                IWebElement googleSearchButton = driver.FindElement(By.ClassName("gNO89b"));
+                googleSearchButton.Click();
+                Assert.That(driver.Title, Is.EqualTo(dataItem.SearchText + " - Google Search"));
+                Console.WriteLine("GoogleSearchTest - Pass");
+                driver.Navigate().GoToUrl("https://www.google.com");
+            }
+           
+            
         }
         [Ignore("Other")]
         [Test]
