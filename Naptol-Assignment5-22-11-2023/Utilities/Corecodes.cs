@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using AventStack.ExtentReports.Reporter;
+using AventStack.ExtentReports;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using System;
@@ -13,6 +15,9 @@ namespace NaptolAssignment522112023
     {
         Dictionary<string, string> ? properties;
         public IWebDriver? driver;
+        public ExtentReports extent;
+        ExtentSparkReporter sparkReporter;
+        public ExtentTest test;
         public void ReadConfiguration()
         {
             string currDir = Directory.GetParent(@"../../../").FullName;
@@ -54,13 +59,17 @@ namespace NaptolAssignment522112023
             ITakesScreenshot screenshot = (ITakesScreenshot)driver;
             Screenshot screenshot1 = screenshot.GetScreenshot();
             string currDir = Directory.GetParent(@"../../../").FullName;
-            string filepath = currDir + "/Screenshot/scs_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+            string filepath = currDir + "/ScreenShots/scs_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
             screenshot1.SaveAsFile(filepath);
 
         }
         [OneTimeSetUp] 
         public void Intializevrowser() 
         {
+            string currdir = Directory.GetParent(@"../../../").FullName;
+            extent = new ExtentReports();
+            sparkReporter = new ExtentSparkReporter(currdir + "/ExtentReports/extent-report" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".html");
+            extent.AttachReporter(sparkReporter);
             ReadConfiguration();
             if (properties["browser"] .ToLower() == "chrome")
             {

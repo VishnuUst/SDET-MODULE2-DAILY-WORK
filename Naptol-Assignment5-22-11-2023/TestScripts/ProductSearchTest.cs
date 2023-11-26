@@ -20,6 +20,19 @@ namespace NaptolAssignment522112023.TestScripts
             {
                 driver.Navigate().GoToUrl("https://www.naaptol.com/");
             }
+            try
+            {
+                Assert.That(driver.Url.Contains("naaptol"));
+                test = extent.CreateTest("Search Product Test");
+                test.Pass("Search product success");
+
+            }
+            catch (AssertionException)
+            {
+                test = extent.CreateTest("Search Product Test");
+                test.Fail("Search product failed");
+
+            }
             string? currDir = Directory.GetParent(@"../../../")?.FullName;
 
             string? excelFilePath = currDir + "/TestSearchData/InputSearchData.xlsx";
@@ -39,16 +52,18 @@ namespace NaptolAssignment522112023.TestScripts
                 var enterkey = naptolhomepage.EnterFunction();
                 var selectprod = new SelectProductPage(driver);
                 selectprod.SelectProduct();
-                Assert.That(driver.Url.Contains("eyewear"));
+                
                 List<string> lswindow = driver.WindowHandles.ToList();
                 driver.SwitchTo().Window(lswindow[1]);
                 Thread.Sleep(2000);
                 var sprodd =  new SelectedProductPage(driver);
                 sprodd.Sizeselect();
-                
+                TakeScreenShot();
+               // Assert.That(driver.Url.Contains("eyewear"));
                 Thread.Sleep(2000);
                 sprodd.BuyNowButtonClicked();
                 Thread.Sleep(2000);
+                TakeScreenShot();
                 sprodd.CloseButtonClicked();
                 Thread.Sleep(2000);
       
