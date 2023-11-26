@@ -17,15 +17,10 @@ namespace NaptolAssignment522112023.PageObjects
 
             PageFactory.InitElements(driver, this);
         }
-        [FindsBy(How=How.XPath,Using = "//a[text()='Rose Gold-3.00']")]
+        [FindsBy(How=How.XPath,Using = "//a[text()='Black-3.00']")]
         public IWebElement? SelectedSize { get; set; }
         [FindsBy(How = How.XPath, Using = "//a[@id='cart-panel-button-0']")]
         public IWebElement BuyNowSelected { get; set; }
-        [FindsBy(How = How.XPath, Using = "//input[@class='input_Special_2']")]
-        public IWebElement? Qty { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"cartData\"]/li[1]/div[2]/p[2]/a")]
-        public IWebElement? Remove { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//a[@class='fancybox-item fancybox-close']")]
         public IWebElement CloseBtn { get; set; }
@@ -37,18 +32,6 @@ namespace NaptolAssignment522112023.PageObjects
         public void BuyNowButtonClicked()
         {
             BuyNowSelected?.Click();
-        }
-        public void QtyIncrease(string qty)
-        {
-            //IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            //js.ExecuteScript("arguments[0].setAttribute('value','2')", Qty);
-            Qty?.SendKeys(qty);
-            Qty?.SendKeys(Keys.Enter);
-
-        }
-        public void ClickRemove()
-        {
-            Remove?.Click();
         }
         public void CloseButtonClicked()
         {

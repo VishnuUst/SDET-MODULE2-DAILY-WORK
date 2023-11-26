@@ -18,7 +18,6 @@ namespace NaptolAssignment522112023.PageObjects
         }
         [FindsBy(How = How.Id, Using = "header_search_text")]
         public IWebElement? SearchText { get; set; }
-
         public void SearchTextFunction(string productname)
         {
             SearchText.SendKeys(productname);

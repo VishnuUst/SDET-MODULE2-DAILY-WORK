@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rediff", "Rediff\Rediff.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaptolAssignment522112023", "Naptol-Assignment5-22-11-2023\NaptolAssignment522112023.csproj", "{C229EFFD-AF31-4893-990A-FBB8C629D038}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BunnyCart", "BunnyCart\BunnyCart.csproj", "{A223DFB1-4391-42F8-A0C2-3F982016DBBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BunnyCart", "BunnyCart\BunnyCart.csproj", "{A223DFB1-4391-42F8-A0C2-3F982016DBBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

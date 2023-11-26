@@ -16,7 +16,7 @@ namespace NaptolAssignment522112023.PageObjects
             this.driver = driver ?? throw new ArgumentException(nameof(driver));
             PageFactory.InitElements(driver, this);
         }
-        [FindsBy(How = How.XPath,Using = "//div[@id='productItem5']")]
+        [FindsBy(How = How.XPath,Using ="//div[@id='productItem5' and @pid='12612074']")]
         public IWebElement Productselect {  get; set; }
 
         public SelectedProductPage SelectProduct()
