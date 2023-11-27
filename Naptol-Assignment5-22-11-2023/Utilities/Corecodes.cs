@@ -88,6 +88,7 @@ namespace NaptolAssignment522112023
         public void CleanUp()
         {
             driver.Quit();
+            extent.Flush();
         }
 
     }

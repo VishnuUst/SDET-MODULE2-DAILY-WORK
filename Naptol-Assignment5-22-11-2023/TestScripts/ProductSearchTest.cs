@@ -47,7 +47,19 @@ namespace NaptolAssignment522112023.TestScripts
                 naptolhomepage.SearchTextFunction(excelData.SearchText);
                 Thread.Sleep(3000);
                 TakeScreenShot();
-                Assert.IsNotNull( searchData );
+                try
+                {
+                    Assert.AreEqual("Naaptol", driver.Title);
+                    test = extent.CreateTest("Title contain");
+                    test.Pass("Title test failed");
+                }
+                catch (AssertionException)
+                {
+                    test = extent.CreateTest("Failed product test");
+                    test.Fail("Title test failed");
+
+                }
+                
 
                 var enterkey = naptolhomepage.EnterFunction();
                 var selectprod = new SelectProductPage(driver);
