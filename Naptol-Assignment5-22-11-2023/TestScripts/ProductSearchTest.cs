@@ -62,9 +62,8 @@ namespace NaptolAssignment522112023.TestScripts
                 
 
                 var enterkey = naptolhomepage.EnterFunction();
-                var selectprod = new SelectProductPage(driver);
-                selectprod.SelectProduct();
-                
+                var selectprod = naptolhomepage.
+               
                 List<string> lswindow = driver.WindowHandles.ToList();
                 driver.SwitchTo().Window(lswindow[1]);
                 Thread.Sleep(2000);
