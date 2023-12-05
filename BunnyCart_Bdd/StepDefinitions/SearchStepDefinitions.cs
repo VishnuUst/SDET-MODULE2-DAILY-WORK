@@ -13,22 +13,22 @@ namespace BunnyCart_Bdd.StepDefinitions
 {
     [Binding]
 
-    public class SearchStepDefinitions : Corecodes
+    public class SearchStepDefinitions:Corecodes
     {
-        
-       
+
+        IWebDriver? driver = BeforeHooks.driver;
         [Given(@"User will be on the Homepage")]
         public void GivenUserWillBeOnTheHomepage()
         {
-            BeforeHooks.driver.Url = "https://www.bunnycart.com";
-            BeforeHooks. driver.Manage().Window.Maximize();
+           driver.Url = "https://www.bunnycart.com";
+           driver.Manage().Window.Maximize();
         }
 
 
         [When(@"User will types the '([^']*)' in the searchbox")]
         public void WhenUserWillTypesTheInTheSearchbox(string searchtext)
         {
-            IWebElement? searchInput =BeforeHooks. driver.FindElement(By.Id("search"));
+            IWebElement? searchInput =driver.FindElement(By.Id("search"));
             searchInput.SendKeys(searchtext);
             searchInput.SendKeys(Keys.Enter);
             Thread.Sleep(3000);
@@ -45,12 +45,12 @@ namespace BunnyCart_Bdd.StepDefinitions
         [Then(@"Search results are loaded in the same page with '([^']*)'")]
         public void ThenSearchResultsAreLoadedInTheSamePageWith(string searchtext)
         {
-            TakeScreenShot(BeforeHooks.driver);
+            TakeScreenShot(driver);
             
             try
             {
-                Assert.That(BeforeHooks.driver.Url.Contains(searchtext));
-                LogTestResult("Search Test", $" {searchtext}Test Pass");
+                Assert.That(driver.Url.Contains(searchtext));
+               LogTestResult("Search Test", $" {searchtext}Test Pass");
             }
             catch(AssertionException ex)
             {

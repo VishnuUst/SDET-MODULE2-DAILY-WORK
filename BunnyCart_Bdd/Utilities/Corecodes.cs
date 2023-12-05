@@ -1,4 +1,5 @@
 ﻿
+using BunnyCartBDDTest.Hooks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
@@ -13,7 +14,7 @@ namespace BunnyCart_Bdd
 {
     public class Corecodes
     {
-        public IWebDriver? driver;
+        //IWebDriver? driver = BeforeHooks.driver;
         
        
         public void TakeScreenShot(IWebDriver driver)
