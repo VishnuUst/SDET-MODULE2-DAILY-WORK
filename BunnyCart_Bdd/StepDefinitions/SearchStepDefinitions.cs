@@ -57,5 +57,19 @@ namespace BunnyCart_Bdd.StepDefinitions
                 LogTestResult("Search test","Search Test Fail",ex.Message);
             }
         }
+        [Then(@"The heading should have '([^']*)'")]
+        public void ThenTheHeadingShouldHave(string searchtext)
+        {
+            IWebElement ele = driver.FindElement(By.XPath("//h1[@class='page-title']"));
+            Assert.That(ele.Text, Does.Contain(searchtext)) ;
+
+        }
+
+        [Then(@"Title should have '([^']*)'")]
+        public void ThenUrlShouldHave(string searchtext)
+        {
+            Assert.That(searchtext, Does.Contain(driver.Title));
+        }
+
     }
 }
