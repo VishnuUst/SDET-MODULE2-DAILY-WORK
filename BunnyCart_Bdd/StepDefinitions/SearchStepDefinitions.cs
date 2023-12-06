@@ -68,8 +68,24 @@ namespace BunnyCart_Bdd.StepDefinitions
         [Then(@"Title should have '([^']*)'")]
         public void ThenUrlShouldHave(string searchtext)
         {
-            Assert.That(searchtext, Does.Contain(driver.Title));
+            Assert.That(driver.Title,Does.Contain(searchtext));
+        }
+        string label;
+       
+
+        [When(@"User select a '([^']*)'")]
+        public void WhenUserSelectA(string pid)
+        {
+            IWebElement prod = driver.FindElement(By.XPath("(//a[@class='product-item-link'])[position()=" + pid + "]"));
+            label = prod.Text;
+            prod.Click();
         }
 
+        [Then(@"Product page is loaded")]
+        public void ThenProductPageIsLoaded()
+        {
+            Assert.That(driver.FindElement(By.XPath("//h1[@class='page-title']")).Text.Contains(label));
+
+        }
     }
 }

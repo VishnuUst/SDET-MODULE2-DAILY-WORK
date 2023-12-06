@@ -76,8 +76,9 @@ namespace BunnyCart_Bdd.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("01 Search for products")]
         [NUnit.Framework.CategoryAttribute("Search_And_Add_To_Cart(Order=1)")]
-        [NUnit.Framework.TestCaseAttribute("water", null)]
-        public virtual void _01SearchForProducts(string searchtext, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("water", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("java", "2", null)]
+        public virtual void _01SearchForProducts(string searchtext, string productNo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Search_And_Add_To_Cart(Order=1)"};
@@ -88,6 +89,7 @@ namespace BunnyCart_Bdd.Features
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("searchtext", searchtext);
+            argumentsOfScenario.Add("productNo", productNo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 Search for products", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -124,53 +126,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.And(string.Format("Title should have \'{0}\'", searchtext), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "* ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("02 Select a particular product")]
-        [NUnit.Framework.CategoryAttribute("Search_And_Add_To_Cart(Order=2)")]
-        [NUnit.Framework.TestCaseAttribute("1", null)]
-        public virtual void _02SelectAParticularProduct(string productNo, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Search_And_Add_To_Cart(Order=2)"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("productNo", productNo);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 Select a particular product", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 16
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 17
- testRunner.Given("Search page is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 18
+#line 12
  testRunner.When(string.Format("User select a \'{0}\'", productNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 13
  testRunner.Then("Product page is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

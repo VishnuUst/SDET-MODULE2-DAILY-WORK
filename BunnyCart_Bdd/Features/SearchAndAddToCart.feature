@@ -8,16 +8,20 @@ Scenario: 01 Search for products
 	When User will types the '<searchtext>' in the searchbox
 	Then Search results are loaded in the same page with '<searchtext>'
 	* The heading should have '<searchtext>'
-	* Title should have '<searchtext>'
-Examples: 
-	| searchtext | 
-	| water      | 
-@Search_And_Add_To_Cart(Order=2)
-Scenario Outline:	02 Select a particular product
-	Given Search page is loaded
+	* Title should have '<searchtext>'	
 	When User select a '<productNo>'
 	Then Product page is loaded
-	
 Examples: 
-	| productNo |
-	| 1         |
+	| searchtext | productNo |
+	| water      | 1         |
+	| java       | 2         |
+
+#@Search_And_Add_To_Cart(Order=2)
+#Scenario Outline:	02 Select a particular product
+	#When User select a '<productNo>'
+	#Then Product page is loaded
+#Examples: 
+	##| productNo |
+	#| 1         |
+
+
